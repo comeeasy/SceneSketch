@@ -37,7 +37,7 @@ wget https://huggingface.co/akhaliq/CLIPasso/resolve/main/u2net.pth --output-doc
 and the LAMA model:
 ```bash
 cd lama/
-curl -L $(yadisk-direct https://disk.yandex.ru/d/ouP6l8VJ0HpMZg) -o big-lama.zip
+curl -LJO https://huggingface.co/smartywu/big-lama/resolve/main/big-lama.zip
 unzip big-lama.zip
 ```
 
