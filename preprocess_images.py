@@ -88,7 +88,7 @@ def get_U2Net_mask(top_path, im_name, device, use_gpu):
     predict[predict < 0.5] = 0
     predict[predict >= 0.5] = 1
     
-    predict = torch.tensor(ndimage.binary_dilation(predict[0].cpu().numpy(), structure=np.ones((11,11))).astype(np.int)).unsqueeze(0)
+    predict = torch.tensor(ndimage.binary_dilation(predict[0].cpu().numpy(), structure=np.ones((11,11))).astype(np.int32)).unsqueeze(0)
 
     mask = torch.cat([predict, predict, predict], axis=0).permute(1, 2, 0)
     mask = mask.cpu().numpy()
